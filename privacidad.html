@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Privacidad | NewTvApp</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: rgba(30, 41, 59, 0.8);
+            --primary: #60a5fa;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #a855f7;
+        }
+
+        /* Reset y Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 15px; /* Menos espacio en bordes para móviles */
+            min-height: 100vh;
+        }
+
+        .policy-container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 30px 20px; /* Padding optimizado */
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            text-align: left;
+        }
+
+        h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.2; margin-bottom: 10px; color: #fff; }
+        .last-update { color: var(--primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+
+        /* Contenido */
+        section { margin-bottom: 25px; }
+        h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 12px; margin-top: 20px; display: flex; align-items: flex-start; }
+        h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 10px; margin-top: 15px; }
+
+        p { margin-bottom: 12px; font-weight: 300; color: #cbd5e1; font-size: 1rem; }
+        
+        ul { list-style: none; margin-left: 5px; margin-bottom: 15px; }
+        li { margin-bottom: 10px; position: relative; padding-left: 22px; font-size: 0.95rem; color: #cbd5e1; }
+        li::before { content: '•'; position: absolute; left: 0; color: var(--primary); }
+        
+        .sub-list { margin-left: 15px; margin-top: 5px; }
+        .sub-list li::before { content: '◦'; color: var(--accent); }
+
+        /* Caja resaltada para móviles */
+        .highlight-box {
+            background: rgba(168, 85, 247, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        /* Botón de contacto móvil */
+        .contact-btn {
+            display: block;
+            background: rgba(96, 165, 250, 0.1);
+            color: var(--primary);
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Botón Flotante Volver Arriba */
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        #scrollTop.show { opacity: 1; pointer-events: auto; }
+
+        /* Ajustes Tablet/PC */
+        @media (min-width: 768px) {
+            body { padding: 40px 20px; }
+            .policy-container { padding: 50px; }
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<main class="policy-container">
+    <header>
+        <h1>Política de Privacidad para NewTvApp</h1>
+        <p class="last-update">ACTUALIZADO: 28 DE ENERO, 2026</p>
+    </header>
+
+    <section>
+        <p>En NewTvApp, nos comprometemos a proteger tu privacidad. Esta Política de Privacidad explica qué información recopilamos, cómo la usamos y las opciones que tienes con respecto a tu información cuando usas nuestra aplicación móvil ("la App").</p>
+        <p>Al usar NewTvApp, aceptas las prácticas descritas en esta política.</p>
+    </section>
+
+    <section>
+        <h2>1. Información que Recopilamos</h2>
+        <p>Para que la aplicación funcione correctamente y para mejorar tu experiencia, recopilamos ciertos tipos de información.</p>
+        
+        <h3>a) Información Recopilada Automáticamente:</h3>
+        <ul>
+            <li><strong>Datos de Publicidad:</strong> Para poder ofrecer la aplicación de forma gratuita, mostramos anuncios a través de Google AdMob. AdMob recopila información para mostrar anuncios relevantes para ti. Esto puede incluir:
+                <ul class="sub-list">
+                    <li>Identificador de Publicidad de tu dispositivo.</li>
+                    <li>Dirección IP.</li>
+                    <li>Información no personal sobre tu dispositivo (como el modelo, el sistema operativo y el idioma).</li>
+                    <li>Datos sobre tu interacción con los anuncios.</li>
+                </ul>
+            </li>
+            <li><strong>Datos de Uso y Diagnóstico (Logs):</strong> Cuando usas la App o si ocurre un error, recopilamos automáticamente datos técnicos. No usamos esta información para identificarte personalmente, sino para solucionar problemas.</li>
+        </ul>
+
+        <h3>b) Información de Terceros (Contenido Web):</h3>
+        <p>La App utiliza un componente WebView para mostrar contenido directamente de nuestras páginas web. NewTvApp no controla el seguimiento que estas páginas web puedan realizar.</p>
+    </section>
+
+    <section>
+        <h2>2. Cómo Usamos tu Información</h2>
+        <ul>
+            <li><strong>Operar la App:</strong> Para mostrarte el contenido y los canales de video.</li>
+            <li><strong>Mostrar Anuncios:</strong> La monetización nos permite mantener la aplicación gratuita.</li>
+            <li><strong>Mejorar la App:</strong> Análisis de errores para mayor estabilidad.</li>
+            <li><strong>Facilitar Actualizaciones:</strong> Verificación y descarga de nuevas versiones.</li>
+            <li><strong>Descargar Otras Aplicaciones:</strong> Gestión de descargas en la sección "Cargar Apps".</li>
+        </ul>
+    </section>
+
+    <section class="highlight-box">
+        <h2>3. Actualizaciones e Instalación de APKs</h2>
+        <p>Esta sección es muy importante para tu seguridad.</p>
+        <ul>
+            <li><strong>Verificación:</strong> Conexión a GitHub para nuevas versiones.</li>
+            <li><strong>Descarga:</strong> El APK se guarda temporalmente en la caché privada.</li>
+            <li><strong>Permiso:</strong> Android pedirá permiso para "fuentes desconocidas" solo para actualizar o cargar apps solicitadas por ti.</li>
+            <li><strong>Limpieza:</strong> Borrado automático del instalador tras el éxito.</li>
+        </ul>
+        <p><strong>No instalaremos nada sin tu consentimiento explícito.</strong></p>
+    </section>
+
+    <section>
+        <h2>4. Con Quién Compartimos Información</h2>
+        <p>No vendemos ni alquilamos tu información personal. Solo compartimos datos técnicos con <strong>Google AdMob</strong> y bajo requisitos legales obligatorios.</p>
+    </section>
+
+    <section>
+        <h2>5. Seguridad</h2>
+        <p>Tomamos medidas razonables para proteger los datos, aunque ningún sistema es 100% impenetrable.</p>
+    </section>
+
+    <section>
+        <h2>6. Privacidad de los Niños</h2>
+        <p>No está dirigida a niños menores de 13 años. No recopilamos información personal de niños intencionadamente.</p>
+    </section>
+
+    <section>
+        <h2>7. Cambios</h2>
+        <p>Podemos actualizar esta política. Se aconseja revisarla periódicamente en esta página.</p>
+    </section>
+
+    <section>
+        <h2>8. Contáctanos</h2>
+        <p>Si tienes preguntas, escríbenos directamente:</p>
+        <a href="mayllong1@hotmail.es" class="contact-btn">Enviar Correo Electrónico</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Msoftware - NewTvApp Team</p>
+    </footer>
+</main>
+
+<a href="#" id="scrollTop">↑</a>
+
+<script>
+    // Script para mostrar/ocultar el botón de volver arriba
+    const scrollBtn = document.getElementById("scrollTop");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    };
+    scrollBtn.onclick = function(e) {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+</script>
+
+</body>
+</html>
