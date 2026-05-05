@@ -128,6 +128,66 @@
             h1 { font-size: 2.25rem; }
             h2 { font-size: 1.5rem; }
         }
+        /* Nuevo codigo */
+        /* Estilos para el apartado de eliminación de cuenta */
+        .delete-account-section {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px dashed rgba(239, 68, 68, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .delete-account-section h2 {
+            color: #ef4444; /* Rojo suave para indicar precaución */
+            margin-top: 0;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .delete-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.6);
+            color: white;
+            font-family: inherit;
+        }
+        
+        .delete-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .delete-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+        
+        .success-message {
+            display: none;
+            color: #10b981;
+            font-weight: 500;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        /* hasta aqui el nuevo */
     </style>
 </head>
 <body>
@@ -213,6 +273,24 @@
     <a href="mailto:mayllong1@hotmail.es" class="contact-btn">Enviar Correo Electrónico</a>
     </section>
 
+    //nuevo codigo
+    <section class="delete-account-section">
+    <h2>9. Eliminación de Cuenta</h2>
+    <p>Si deseas eliminar tu cuenta y todos los datos asociados, introduce tu correo a continuación:</p>
+    
+    <div id="delete-container">
+        <div class="input-group">
+            <input type="email" id="userEmail" class="delete-input" placeholder="tu@correo.com" required>
+            <button onclick="requestDeletion()" class="delete-btn">Solicitar Eliminación</button>
+        </div>
+    </div>
+    
+    <div id="deleteSuccess" class="success-message">
+        ✓ Solicitud enviada. Tus datos se eliminarán en un periodo de 24 horas.
+    </div>
+</section>
+//hasta aqui
+
     <footer>
         <p>&copy; 2026 Msoftware - NewTvApp Team</p>
     </footer>
@@ -234,6 +312,29 @@
         e.preventDefault();
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
+
+    //nuevo codigo
+    function requestDeletion() {
+    const emailInput = document.getElementById("userEmail");
+    const container = document.getElementById("delete-container");
+    const successMsg = document.getElementById("deleteSuccess");
+    const email = emailInput.value;
+
+    if (email && email.includes("@")) {
+        // Preparamos el envío vía mailto (abre el correo del usuario)
+        const subject = "Solicitud de eliminación de cuenta - NewTvApp";
+        const body = `Solicito formalmente la eliminación de mi cuenta y todos mis datos asociados.\n\nCorreo a eliminar: ${email}`;
+        
+        window.location.href = `mailto:mayllong1@hotmail.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Mostramos el feedback visual
+        container.style.display = "none";
+        successMsg.style.display = "block";
+    } else {
+        alert("Por favor, introduce un correo electrónico válido.");
+    }
+}//hasta aqui
+
 </script>
 
 </body>
